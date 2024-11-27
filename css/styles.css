@@ -1,0 +1,143 @@
+:root{
+    --fuente: "Karla", sans-serif;
+    
+    /*Colors*/
+    --bgc: rgb(230, 239, 246);
+    --principal: rgb(43, 179, 177);
+    --secundario: rgb(74, 190, 189);
+    --blanco: rgb(255, 255, 255);
+    --boton: rgb(191, 223, 50);
+    --gris: rgb(178, 180, 187);
+}
+/*Hacks*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *::after{
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px;
+    background-color: var(--bgc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fuente);
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 320px;
+    height: 90%;
+    color: var(--blanco);
+    border-radius: 1rem;
+    box-shadow: 10px 10px 5px -4px rgba(214,207,214,1);
+}
+.superior,
+.izquierdo,
+.derecho{
+    padding: 1rem 2rem;
+}
+.superior{
+    grid-column: 1 / 3;
+    background-color: var(--blanco);
+    border-radius: .5rem .5rem 0 0;
+}
+.superior__titulo{
+    color: var(--principal);
+    text-align: le;
+}
+.superior__detalle{
+    color: var(--boton);
+}
+.superior__texto{
+    color: var(--gris);
+    line-height: 1.5;
+    font-size: 1.3rem;
+}
+.izquierdo{
+    grid-column: 1 / 3;
+    background-color: var(--principal);
+}
+.izquierdo__titulo{}
+.izquierdo__precio{
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.izquierdo__detalle{
+    opacity: .7;
+    margin: .5rem 0 3rem 0;
+    
+}
+.izquierdo__precio span{
+    font-size: 1.4rem;
+    opacity: .5;
+    margin-left: 1.5rem;
+    font-weight: 400;
+}
+.izquierdo button{
+    background-color: var(--boton);
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    border-radius: .5rem;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: filter 300ms;
+}
+.izquierdo button:hover{
+    filter: brightness(90%);
+}
+.derecho{
+    grid-column: 1 / 3;
+    background-color: var(--secundario);
+    border-radius: 0 0 .5rem .5rem;
+}
+.derecho__titulo{}
+.derecho ul{
+    list-style: none;
+    padding: 0;
+    opacity: .7;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+@media (min-width: 1440px) {
+    main{
+        width: 45%;
+        height: 70vh;
+    }
+    .superior{
+        grid-column: 1 / 3;
+        height: 35vh;
+    }
+    .superior__titulo{
+        font-size: 2.5rem;
+    }
+    .superior__detalle{
+        font-size: 2rem;
+    }
+    .superior__texto{
+        font-size: 1.65rem;
+    }
+    .izquierdo,
+    .derecho,
+    .superior{
+        padding: 3rem 5rem;
+    }
+    .izquierdo{
+        grid-column: 1 / 2;
+        height: 35vh;
+        border-radius: 0 0 0 .5rem;
+    }
+    .derecho{
+        grid-column: 2 / 3;
+        height: 35vh;
+        border-radius: 0 0 .5rem 0;
+    }
+}
